@@ -1,5 +1,5 @@
 <?php
 
-echo '<br/><br/>BACKEND!<br/><br/>';
+echo '<br/><br/>PHP + NGINX STARTED<br/><br/>';
 
 phpinfo();

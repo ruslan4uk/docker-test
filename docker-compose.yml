@@ -7,7 +7,6 @@ services:
     ports:
       # laravel backend api server
       - 8080:8080
-      - 80:3000
     working_dir: ${APP_PATH_CONTAINER}
     volumes:
       - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
@@ -21,17 +20,22 @@ services:
       - php
 
   nodejs:
-    build: ./nodejs
+    image: node:10.16.3-alpine
     restart: always
     volumes:
       - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
     working_dir: ${APP_PATH_CONTAINER}/frontend
+    ports:
+      - 80:8888
+    command: >
+      sh -c "yarn install && yarn run start"
 
   php:
     build: ./php
     restart: always
     volumes:
       - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
+    working_dir: ${APP_PATH_CONTAINER}/backend
 
   db:
     image: mysql

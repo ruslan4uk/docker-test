@@ -1,0 +1,4 @@
+storage/mysql/data/*
+storage/redis/data/*
+src/frontend/*
+src/backend/*
