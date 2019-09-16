@@ -1,4 +1,11 @@
 storage/mysql/data/*
+!storage/mysql/data/README.md
+
 storage/redis/data/*
+!storage/redis/data/README.md
+
 src/frontend/*
+!src/frontend/README.md
+
 src/backend/*
+!src/backend/README.md
